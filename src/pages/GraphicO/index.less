@@ -1,0 +1,169 @@
+@import '~antd/es/style/themes/default.less';
+
+.editor {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  // height: calc(100vh - 25px);
+  min-height: 100px;
+  background: @descriptions-bg;
+}
+
+.editorHd {
+  padding: 8px;
+  background: @descriptions-bg;
+  border: 1px solid @item-active-bg;
+}
+
+
+
+
+.editorBd {
+   flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+.editorSidebar{
+   display: flex;
+   flex-direction: column;
+  // overflow-y: scroll;
+  // max-height: 500px;;
+  height: 100%;
+  width:200px;
+  
+}
+.hideleft  .editorSidebar
+{
+  width: 5px;
+}
+.editorHd{
+  border-bottom: 1px solid #c7c7c770 !important;
+}
+.editorSidebar:first-child
+{
+  border-right: 1px solid #c7c7c770 !important;
+}
+.editorRightSidebar{
+  border-left: 1px solid #c7c7c770 !important;
+  display: flex;
+  flex-direction: column;
+ overflow-y: hidden;
+ // max-height: 500px;;
+ height: 100%;
+ width:280px;
+ 
+ //position: absolute;
+   // float: right;
+   
+    right: 0px;
+
+    .ant-form-item
+    {
+      font-size: 12px;
+    }
+}
+
+.hideright  .editorRightSidebar
+{
+  width: 7px;
+}
+
+.autoBtn{
+  display: block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  
+  top: 40%;
+  z-index: 10;
+}
+
+.autoBtn.left{
+ left:190px;
+}
+.hideleft .autoBtn.left{
+  left:5px;
+ }
+
+.autoBtn .ant-btn{
+width: 25px;
+    padding: 5px;
+    margin-left: -7px;
+    .anticon{
+      margin-left:1px; 
+    }
+  }
+
+  .tagbardv{
+    position: absolute;
+    z-index: 10;
+    background: white;
+    width: 100%;
+  }
+
+
+  .size-watch {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    visibility:hidden;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+.editorContent2 {
+ 
+  height: 100%;
+  min-height: 100px;
+  position: relative;
+  
+  display: flex;
+   flex-direction: column;
+ 
+     flex-grow: 1;
+  
+}
+
+.editorContent {
+  :global {
+    .graph-container canvas {
+      vertical-align: middle;
+    }
+  }
+}
+
+
+
+.editorSidebar {
+  border-right: 1px solid #acacac;
+  width:200px;
+  background: @descriptions-bg;
+  :global {
+    .g6-editor-minimap-container {
+      background: none !important ;
+    }
+  }
+  &:first-child {
+    border-right: 1px solid @item-active-bg;
+  }
+
+  &:last-child {
+    border-left: 1px solid @item-active-bg;
+  }
+}
+
+.flow,
+.mind,
+.koni {
+  flex: 1;
+}
+
+
+.autoBtn .ant-btn{
+  border: 0px;
+}
+

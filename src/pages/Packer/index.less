@@ -1,0 +1,60 @@
+.kcard.ant-card-bordered {
+    border: 1px solid #5ba7f5!important;
+    border-radius: 3px;
+}
+
+
+.resource-card{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+    color: inherit;
+    list-style: none;
+    border: 1px solid #e6e6e6;
+    border-radius: 2px;
+    cursor: pointer;
+    -webkit-transition: -webkit-box-shadow .3s;
+    transition: -webkit-box-shadow .3s;
+    transition: box-shadow .3s;
+    transition: box-shadow .3s,-webkit-box-shadow .3s;
+    margin-right: 15px;
+}
+
+.resource-cards{
+    display: flex;
+   
+}
+
+ .resource-cards .resource-card:hover {
+    -webkit-box-shadow: 0 3px 6px -4px rgba(0,0,0,.12),0 6px 16px 0 rgba(0,0,0,.08),0 9px 28px 8px rgba(0,0,0,.05);
+    box-shadow: 0 3px 6px -4px rgba(0,0,0,.12),0 6px 16px 0 rgba(0,0,0,.08),0 9px 28px 8px rgba(0,0,0,.05)
+}
+
+.resource-cards .resource-card .resource-card-image {
+    width: calc(100% + 2px);
+    max-width: none;
+    height: 144px;
+    margin: -1px -1px 0;
+    -o-object-fit: cover;
+    object-fit: cover
+}
+
+.resource-cards .resource-card .resource-card-title {
+    margin: 16px 20px 8px;
+    color: #0d1a26;
+    font-size: 20px;
+    line-height: 28px
+}
+
+.resource-cards .resource-card .resource-card-description {
+    margin: 0 20px 20px;
+    color: #697b8c;
+    font-size: 14px;
+    line-height: 22px
+}
+
