@@ -158,8 +158,8 @@ const PackerIndex: React.FC<{}> = (props) => {
 
     <div className="resource-cards" >
 
-<Col span={5}>
-      <a className=" resource-card" href="javascript:void(0)" onClick={test2} >
+{/* <Col span={5}>
+      <a className=" resource-card " href="javascript:void(0)" onClick={test2} >
 
         <div >
           <img className="resource-card-image" src={editimg} alt="" />
@@ -172,7 +172,7 @@ const PackerIndex: React.FC<{}> = (props) => {
         </div>
 
       </a>
-      </Col>
+      </Col> */}
 
       <Col span={5}>
       <a className=" resource-card"  onClick={showkg}>

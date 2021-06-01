@@ -3,7 +3,7 @@ import { history, Reducer, Effect } from 'umi';
 import { stringify } from 'querystring';
 
 import { queryCurrent, query as queryUsers } from '@/services/user';
-import { getPageQuery } from '@/utils/utils';
+import { getPageQuery, isnull } from '@/utils/utils';
 import { setToken } from '@/utils/token';
 import _ from 'lodash';
 import { setAuthority, setKey } from '@/utils/authority';
@@ -101,7 +101,7 @@ const UserModel: UserModelType = {
       //console.log("user/saveuser" + JSON.stringify(action));
       let user={}
 
-      if (action.payload.data === '') {
+      if (  action.payload.data === '') {
         setToken("");
         setAuthority("nologin");
         user={
@@ -118,12 +118,30 @@ const UserModel: UserModelType = {
         // if(!user.userid)
         // user.userid=user.id;
 
+        if(isnull(user))
+       {
+        setToken("");
+        setAuthority("nologin");
+        user={
+          username:'访客',
+          userid:'test',
+        }
+        setKey("app_key","");
+        setKey("app_secret","");
+       }
+        else{
+     
+        let authority="";
         if(user.userName)
         user.username=user.userName;
 
         if(user.name)
         user.username=user.name;
 
+        if(user.errorCode==="-1")
+        {
+          setAuthority("nologin");
+        }
 
         if(user.userName==="访客")
         {
@@ -131,7 +149,7 @@ const UserModel: UserModelType = {
         }
 
         else{
-        let authority="";
+     
         try{
         let roleids=action.payload.data.role_id.split(',');
         for (let index = 0; index < roleids.length; index++) {
@@ -152,6 +170,7 @@ const UserModel: UserModelType = {
  
         setAuthority(authority);
       }
+    }
 
       }
 
